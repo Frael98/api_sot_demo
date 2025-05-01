@@ -15,6 +15,9 @@ class SOTController extends Controller
         return response()->json($productos);
     }
 
+    /**
+     * Obtener las agrupaciones del arbol
+     */
     public function obtenerAgrupaciones(Request $request)
     {
 
