@@ -16,7 +16,18 @@ Route::prefix('v1')->group(
             Route::post('/login', [AuthController::class, 'login']);
             Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
             
+            /**
+             * Rutas GET
+             */
             Route::get('/obtener_agrupaciones', [SOTController::class, 'obtenerAgrupaciones'])->middleware('auth:sanctum');
+            Route::get('/obtener_equipos', [SOTController::class, 'obtenerEquipos'])->middleware('auth:sanctum');
+            Route::get('/obtener_solicitudes', [SOTController::class, 'obtenerSolicitudes'])->middleware('auth:sanctum');
+
+
+            /**
+             * Rutas POST
+             */
+            
         });
     }
 );
