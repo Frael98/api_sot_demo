@@ -14,6 +14,7 @@ Route::prefix('v1')->group(
              * Rutas de autenticación
              */
             Route::post('/login', [AuthController::class, 'login']);
+            Route::post('/signup', [AuthController::class, 'signUp']);
             Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
             
             /**
@@ -43,3 +44,9 @@ Route::get('/test-db', function () {
         return '❌ Error de conexión: ' . $e->getMessage();
     }
 });
+
+/* Route::fallback(function () {
+    return response()->json([
+        'message' => 'Ruta no encontrada.',
+    ], 404);
+}); */
