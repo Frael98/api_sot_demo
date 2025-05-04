@@ -26,7 +26,7 @@ class AuthController extends Controller
 
             //Creamos el token
             //Si no se especifica las abilities tiene acceso total
-            $token = $user->createToken('auth_token')->plainTextToken;
+            $token = $user->createToken('user')->plainTextToken;
 
             return response()->json([
                 'access_token' => $token,
